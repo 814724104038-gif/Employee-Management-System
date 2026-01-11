@@ -692,3 +692,553 @@
             
             .btn {
                 width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .content-area {
+                padding: 20px;
+            }
+            
+            .top-bar {
+                padding: 0 20px;
+            }
+            
+            .search-box {
+                display: none;
+            }
+        }
+
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            top: 90px;
+            right: 30px;
+            z-index: 1001;
+        }
+
+        .toast {
+            background: white;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid var(--primary);
+            animation: toastSlideIn 0.3s ease;
+            min-width: 300px;
+        }
+
+        .toast.success {
+            border-left-color: var(--success);
+        }
+
+        .toast.warning {
+            border-left-color: var(--warning);
+        }
+
+        .toast.danger {
+            border-left-color: var(--danger);
+        }
+
+        .toast-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .toast.success .toast-icon {
+            background: var(--success);
+        }
+
+        .toast.warning .toast-icon {
+            background: var(--warning);
+        }
+
+        .toast.danger .toast-icon {
+            background: var(--danger);
+        }
+
+        .toast.default .toast-icon {
+            background: var(--primary);
+        }
+
+        .toast-content h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .toast-content p {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        @keyframes toastSlideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .empty-state-icon {
+            font-size: 60px;
+            color: var(--border);
+            margin-bottom: 20px;
+        }
+
+        .empty-state-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .empty-state-text {
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        @media (max-width: 992px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div>
+                    <div class="logo-text">Macha EMS</div>
+                    <div class="logo-subtext">Employee Management</div>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <div class="nav-item active" id="dashboardNav">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-item" id="employeesNav">
+                    <i class="fas fa-users"></i>
+                    <span>Employees</span>
+                    <span class="nav-badge" id="employee-count">0</span>
+                </div>
+                <div class="nav-item" id="analyticsNav">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Analytics</span>
+                </div>
+                <div class="nav-item" id="attendanceNav">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Attendance</span>
+                </div>
+                <div class="nav-item" id="payrollNav">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Payroll</span>
+                </div>
+                <div class="nav-item" id="settingsNav">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="page-title">Employee Dashboard</div>
+                
+                <div class="user-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="globalSearch" placeholder="Search employees, departments...">
+                    </div>
+                    
+                    <div class="user-profile" id="userProfile">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard Header -->
+                <div class="dashboard-header">
+                    <div>
+                        <h1 class="dashboard-title">Employee Management</h1>
+                        <p class="dashboard-subtitle">Manage your workforce efficiently and effectively</p>
+                    </div>
+                    <button class="btn btn-primary" id="addEmployeeBtn">
+                        <i class="fas fa-user-plus"></i> Add New Employee
+                    </button>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon blue">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-value" id="totalEmployees">0</div>
+                        <div class="card-label">Total Employees</div>
+                        <div class="card-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>12% from last month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon green">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="card-value" id="activeEmployees">0</div>
+                        <div class="card-label">Active Employees</div>
+                        <div class="card-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>8% from last month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon orange">
+                            <i class="fas fa-user-clock"></i>
+                        </div>
+                        <div class="card-value" id="avgSalary">$0</div>
+                        <div class="card-label">Average Salary</div>
+                        <div class="card-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>5% from last month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon purple">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="card-value" id="totalDepartments">0</div>
+                        <div class="card-label">Departments</div>
+                        <div class="card-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>2 new this quarter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="chart-container">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Employee Distribution by Department</h3>
+                            <select class="form-control" id="chartFilter" style="width: 150px;">
+                                <option>Last 30 days</option>
+                                <option>Last 90 days</option>
+                                <option>This Year</option>
+                            </select>
+                        </div>
+                        <div style="height: 300px;">
+                            <canvas id="departmentChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Employee Status</h3>
+                        </div>
+                        <div style="height: 300px;">
+                            <canvas id="statusChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employee Table -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 class="table-title">All Employees</h3>
+                        <div class="table-actions">
+                            <button class="btn btn-secondary" id="exportBtn">
+                                <i class="fas fa-file-export"></i> Export CSV
+                            </button>
+                            <button class="btn btn-primary" id="filterBtn">
+                                <i class="fas fa-filter"></i> Filter
+                            </button>
+                            <button class="btn btn-success" id="refreshBtn">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <table id="employeeTable">
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Department</th>
+                                <th>Position</th>
+                                <th>Status</th>
+                                <th>Salary</th>
+                                <th>Join Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeeTableBody">
+                            <!-- Employee rows will be inserted here -->
+                        </tbody>
+                    </table>
+                    
+                    <div id="emptyState" class="empty-state" style="display: none;">
+                        <div class="empty-state-icon">
+                            <i class="fas fa-user-slash"></i>
+                        </div>
+                        <h3 class="empty-state-title">No employees found</h3>
+                        <p class="empty-state-text">Add your first employee to get started with managing your workforce.</p>
+                        <button class="btn btn-primary" id="addFirstEmployeeBtn">
+                            <i class="fas fa-user-plus"></i> Add First Employee
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>© 2023 Macha Employee Management System. All rights reserved.</p>
+                <p>v2.1.0 | Last updated: Today</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Employee Modal -->
+    <div class="modal" id="employeeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Add New Employee</h2>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <form id="employeeForm">
+                    <input type="hidden" id="employeeId">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="firstName">First Name *</label>
+                            <input type="text" id="firstName" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="department">Department *</label>
+                            <select id="department" class="form-control" required>
+                                <option value="">Select Department</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Human Resources">Human Resources</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Operations">Operations</option>
+                                <option value="IT Support">IT Support</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="position">Position *</label>
+                            <input type="text" id="position" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="salary">Salary ($) *</label>
+                            <input type="number" id="salary" class="form-control" min="0" step="100" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="status">Employment Status *</label>
+                            <select id="status" class="form-control" required>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                                <option value="On Leave">On Leave</option>
+                                <option value="Probation">Probation</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="hireDate">Hire Date *</label>
+                            <input type="date" id="hireDate" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="location">Location</label>
+                            <select id="location" class="form-control">
+                                <option value="New York">New York</option>
+                                <option value="San Francisco">San Francisco</option>
+                                <option value="London">London</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Remote">Remote</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="form-footer">
+                <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveEmployeeBtn">Save Employee</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Macha EMS - Application Loading...");
+            
+            // Initialize sample data if not exists
+            if (!localStorage.getItem('employees')) {
+                console.log("Creating sample data...");
+                const sampleEmployees = [
+                    {
+                        id: 1,
+                        firstName: "John",
+                        lastName: "Doe",
+                        email: "john.doe@company.com",
+                        phone: "+1 (555) 123-4567",
+                        department: "Engineering",
+                        position: "Senior Software Engineer",
+                        salary: 125000,
+                        status: "Active",
+                        hireDate: "2022-03-15",
+                        location: "New York"
+                    },
+                    {
+                        id: 2,
+                        firstName: "Jane",
+                        lastName: "Smith",
+                        email: "jane.smith@company.com",
+                        phone: "+1 (555) 987-6543",
+                        department: "Marketing",
+                        position: "Marketing Director",
+                        salary: 110000,
+                        status: "Active",
+                        hireDate: "2021-07-22",
+                        location: "San Francisco"
+                    },
+                    {
+                        id: 3,
+                        firstName: "Robert",
+                        lastName: "Johnson",
+                        email: "robert.j@company.com",
+                        phone: "+1 (555) 456-7890",
+                        department: "Sales",
+                        position: "Sales Manager",
+                        salary: 95000,
+                        status: "Active",
+                        hireDate: "2023-01-10",
+                        location: "New York"
+                    },
+                    {
+                        id: 4,
+                        firstName: "Emily",
+                        lastName: "Williams",
+                        email: "emily.w@company.com",
+                        phone: "+1 (555) 234-5678",
+                        department: "Human Resources",
+                        position: "HR Manager",
+                        salary: 85000,
+                        status: "Active",
+                        hireDate: "2020-11-05",
+                        location: "London"
+                    },
+                    {
+                        id: 5,
+                        firstName: "Michael",
+                        lastName: "Brown",
+                        email: "michael.b@company.com",
+                        phone: "+1 (555) 876-5432",
+                        department: "Finance",
+                        position: "Financial Analyst",
+                        salary: 90000,
+                        status: "Active",
+                        hireDate: "2019-09-18",
+                        location: "Singapore"
+                    },
+                    {
+                        id: 6,
+                        firstName: "Sarah",
+                        lastName: "Davis",
+                        email: "sarah.d@company.com",
+                        phone: "+1 (555) 345-6789",
+                        department: "Engineering",
+                        position: "Frontend Developer",
+                        salary: 105000,
+                        status: "Active",
+                        hireDate: "2022-08-30",
+                        location: "Remote"
+                    },
+                    {
+                        id: 7,
+                       
