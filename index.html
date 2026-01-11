@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         :root {
@@ -36,12 +36,11 @@
         body {
             background-color: #f1f5f9;
             color: var(--dark);
-            line-height: 1.5;
+            line-height: 1.6;
             font-size: 14px;
-            overflow-x: hidden;
         }
 
-        /* Layout */
+        /* App Container */
         .app-container {
             display: flex;
             min-height: 100vh;
@@ -52,15 +51,14 @@
             width: 260px;
             background: var(--sidebar);
             color: white;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             position: fixed;
             height: 100vh;
             z-index: 100;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar-header {
-            padding: 24px;
+            padding: 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
@@ -79,9 +77,8 @@
         }
 
         .logo-text {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
-            letter-spacing: -0.5px;
         }
 
         .logo-subtext {
@@ -94,25 +91,19 @@
         }
 
         .nav-item {
-            padding: 14px 24px;
+            padding: 12px 20px;
             display: flex;
             align-items: center;
             gap: 12px;
             cursor: pointer;
             transition: all 0.2s;
             color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
         }
 
         .nav-item:hover, .nav-item.active {
             background: var(--sidebar-hover);
             color: white;
             border-left: 4px solid var(--primary);
-        }
-
-        .nav-item i {
-            width: 20px;
-            font-size: 16px;
         }
 
         .nav-badge {
@@ -128,34 +119,24 @@
         .main-content {
             flex: 1;
             margin-left: 260px;
-            padding: 0;
             width: calc(100% - 260px);
         }
 
         /* Top Bar */
         .top-bar {
             background: white;
-            padding: 0 30px;
+            padding: 0 20px;
             height: 70px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             box-shadow: 0 2px 10px var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 99;
         }
 
         .page-title {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             color: var(--dark);
-        }
-
-        .user-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
         }
 
         .search-box {
@@ -163,19 +144,11 @@
         }
 
         .search-box input {
-            padding: 10px 15px 10px 40px;
+            padding: 8px 15px 8px 40px;
             border: 1px solid var(--border);
             border-radius: 6px;
-            width: 300px;
+            width: 250px;
             font-size: 14px;
-            background: var(--light);
-            transition: all 0.3s;
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
         .search-box i {
@@ -186,46 +159,9 @@
             color: var(--gray);
         }
 
-        .user-profile {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: background 0.2s;
-        }
-
-        .user-profile:hover {
-            background: var(--light);
-        }
-
-        .user-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .user-info h4 {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .user-info p {
-            font-size: 12px;
-            color: var(--gray);
-        }
-
-        /* Dashboard Cards */
+        /* Content Area */
         .content-area {
-            padding: 30px;
+            padding: 20px;
         }
 
         .dashboard-header {
@@ -241,24 +177,20 @@
             color: var(--dark);
         }
 
-        .dashboard-subtitle {
-            color: var(--gray);
-            font-size: 15px;
-        }
-
+        /* Stats Cards */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
+            gap: 20px;
             margin-bottom: 30px;
         }
 
         .card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
             box-shadow: 0 2px 10px var(--shadow);
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             border: 1px solid var(--border);
         }
 
@@ -274,8 +206,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
-            margin-bottom: 20px;
+            font-size: 20px;
+            margin-bottom: 15px;
         }
 
         .card-icon.blue {
@@ -299,7 +231,7 @@
         }
 
         .card-value {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             margin-bottom: 5px;
         }
@@ -307,66 +239,19 @@
         .card-label {
             font-size: 14px;
             color: var(--gray);
-            font-weight: 500;
-        }
-
-        .card-trend {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 13px;
-            margin-top: 10px;
-        }
-
-        .card-trend.positive {
-            color: var(--success);
-        }
-
-        .card-trend.negative {
-            color: var(--danger);
-        }
-
-        /* Charts Section */
-        .chart-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .chart-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 2px 10px var(--shadow);
-            border: 1px solid var(--border);
-        }
-
-        .chart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .chart-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--dark);
         }
 
         /* Employee Table */
         .table-container {
             background: white;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 2px 10px var(--shadow);
             border: 1px solid var(--border);
-            margin-bottom: 30px;
         }
 
         .table-header {
-            padding: 20px 25px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -376,16 +261,16 @@
         .table-title {
             font-size: 18px;
             font-weight: 600;
-            color: var(--dark);
         }
 
         .table-actions {
             display: flex;
-            gap: 15px;
+            gap: 10px;
         }
 
+        /* Buttons */
         .btn {
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 6px;
             font-weight: 600;
             font-size: 14px;
@@ -405,7 +290,6 @@
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
         }
 
         .btn-secondary {
@@ -429,48 +313,35 @@
         }
 
         .btn-sm {
-            padding: 6px 12px;
-            font-size: 13px;
+            padding: 5px 10px;
+            font-size: 12px;
         }
 
+        /* Table */
         table {
             width: 100%;
             border-collapse: collapse;
         }
 
-        thead {
-            background: var(--light);
-        }
-
         th {
-            padding: 15px 25px;
+            padding: 15px;
             text-align: left;
             font-weight: 600;
             color: var(--dark);
             font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            background: var(--light);
             border-bottom: 1px solid var(--border);
         }
 
         td {
-            padding: 18px 25px;
+            padding: 15px;
             border-bottom: 1px solid var(--border);
-            font-size: 14px;
-        }
-
-        tbody tr {
-            transition: background 0.2s;
-        }
-
-        tbody tr:hover {
-            background: #f8fafc;
         }
 
         .employee-info {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .employee-avatar {
@@ -497,8 +368,8 @@
         }
 
         .status-badge {
-            padding: 6px 12px;
-            border-radius: 20px;
+            padding: 4px 8px;
+            border-radius: 12px;
             font-size: 12px;
             font-weight: 600;
             display: inline-block;
@@ -512,11 +383,6 @@
         .status-inactive {
             background: rgba(239, 68, 68, 0.1);
             color: var(--danger);
-        }
-
-        .status-pending {
-            background: rgba(245, 158, 11, 0.1);
-            color: var(--warning);
         }
 
         /* Modal */
@@ -539,22 +405,15 @@
 
         .modal-content {
             background: white;
-            border-radius: 12px;
-            width: 800px;
+            border-radius: 10px;
+            width: 600px;
             max-width: 90%;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-            animation: modalFadeIn 0.3s ease;
-        }
-
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .modal-header {
-            padding: 25px;
+            padding: 20px;
             border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
@@ -562,174 +421,61 @@
         }
 
         .modal-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
-            color: var(--dark);
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            color: var(--gray);
-            transition: color 0.2s;
-        }
-
-        .modal-close:hover {
-            color: var(--danger);
         }
 
         .modal-body {
-            padding: 25px;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 14px;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark);
-            font-size: 14px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 14px;
-            transition: all 0.3s;
-            background: white;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .form-footer {
-            padding: 20px 25px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: flex-end;
             gap: 15px;
         }
 
-        /* Footer */
-        .footer {
-            padding: 20px 30px;
-            text-align: center;
-            color: var(--gray);
-            font-size: 13px;
+        .form-footer {
+            padding: 20px;
             border-top: 1px solid var(--border);
-            background: white;
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .card-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .chart-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .sidebar {
-                transform: translateX(-100%);
-            }
-            
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-            }
-            
-            .sidebar.active {
-                transform: translateX(0);
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                background: none;
-                border: none;
-                font-size: 20px;
-                color: var(--dark);
-                cursor: pointer;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .search-box input {
-                width: 200px;
-            }
-            
-            .table-actions {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .content-area {
-                padding: 20px;
-            }
-            
-            .top-bar {
-                padding: 0 20px;
-            }
-            
-            .search-box {
-                display: none;
-            }
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
         }
 
         /* Toast Notifications */
-        .toast-container {
-            position: fixed;
-            top: 90px;
-            right: 30px;
-            z-index: 1001;
-        }
-
         .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
             background: white;
             border-radius: 8px;
-            padding: 16px 20px;
-            margin-bottom: 15px;
+            padding: 15px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
             border-left: 4px solid var(--primary);
-            animation: toastSlideIn 0.3s ease;
-            min-width: 300px;
+            animation: slideIn 0.3s ease;
+            z-index: 1001;
         }
 
         .toast.success {
@@ -744,90 +490,34 @@
             border-left-color: var(--danger);
         }
 
-        .toast-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 12px;
-        }
-
-        .toast.success .toast-icon {
-            background: var(--success);
-        }
-
-        .toast.warning .toast-icon {
-            background: var(--warning);
-        }
-
-        .toast.danger .toast-icon {
-            background: var(--danger);
-        }
-
-        .toast.default .toast-icon {
-            background: var(--primary);
-        }
-
-        .toast-content h4 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .toast-content p {
-            font-size: 13px;
-            color: var(--gray);
-        }
-
-        @keyframes toastSlideIn {
+        @keyframes slideIn {
             from { transform: translateX(100%); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
         }
 
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .empty-state-icon {
-            font-size: 60px;
-            color: var(--border);
-            margin-bottom: 20px;
-        }
-
-        .empty-state-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .empty-state-text {
-            color: var(--gray);
-            margin-bottom: 30px;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Mobile menu button */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 20px;
-            color: var(--dark);
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        @media (max-width: 992px) {
-            .mobile-menu-btn {
-                display: block;
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -835,7 +525,7 @@
 <body>
     <div class="app-container">
         <!-- Sidebar -->
-        <div class="sidebar" id="sidebar">
+        <div class="sidebar">
             <div class="sidebar-header">
                 <div class="logo">
                     <i class="fas fa-users"></i>
@@ -847,28 +537,20 @@
             </div>
             
             <div class="nav-menu">
-                <div class="nav-item active" id="dashboardNav">
+                <div class="nav-item active">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </div>
-                <div class="nav-item" id="employeesNav">
+                <div class="nav-item">
                     <i class="fas fa-users"></i>
                     <span>Employees</span>
-                    <span class="nav-badge" id="employee-count">0</span>
+                    <span class="nav-badge" id="employeeCount">0</span>
                 </div>
-                <div class="nav-item" id="analyticsNav">
+                <div class="nav-item">
                     <i class="fas fa-chart-pie"></i>
                     <span>Analytics</span>
                 </div>
-                <div class="nav-item" id="attendanceNav">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Attendance</span>
-                </div>
-                <div class="nav-item" id="payrollNav">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <span>Payroll</span>
-                </div>
-                <div class="nav-item" id="settingsNav">
+                <div class="nav-item">
                     <i class="fas fa-cog"></i>
                     <span>Settings</span>
                 </div>
@@ -879,25 +561,10 @@
         <div class="main-content">
             <!-- Top Bar -->
             <div class="top-bar">
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
                 <div class="page-title">Employee Dashboard</div>
-                
-                <div class="user-actions">
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="globalSearch" placeholder="Search employees, departments...">
-                    </div>
-                    
-                    <div class="user-profile" id="userProfile">
-                        <div class="user-avatar">AD</div>
-                        <div class="user-info">
-                            <h4>Admin User</h4>
-                            <p>System Administrator</p>
-                        </div>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search employees...">
                 </div>
             </div>
 
@@ -905,12 +572,9 @@
             <div class="content-area">
                 <!-- Dashboard Header -->
                 <div class="dashboard-header">
-                    <div>
-                        <h1 class="dashboard-title">Employee Management</h1>
-                        <p class="dashboard-subtitle">Manage your workforce efficiently and effectively</p>
-                    </div>
+                    <h1 class="dashboard-title">Employee Management</h1>
                     <button class="btn btn-primary" id="addEmployeeBtn">
-                        <i class="fas fa-user-plus"></i> Add New Employee
+                        <i class="fas fa-user-plus"></i> Add Employee
                     </button>
                 </div>
 
@@ -922,10 +586,6 @@
                         </div>
                         <div class="card-value" id="totalEmployees">0</div>
                         <div class="card-label">Total Employees</div>
-                        <div class="card-trend positive">
-                            <i class="fas fa-arrow-up"></i>
-                            <span>12% from last month</span>
-                        </div>
                     </div>
                     
                     <div class="card">
@@ -934,22 +594,14 @@
                         </div>
                         <div class="card-value" id="activeEmployees">0</div>
                         <div class="card-label">Active Employees</div>
-                        <div class="card-trend positive">
-                            <i class="fas fa-arrow-up"></i>
-                            <span>8% from last month</span>
-                        </div>
                     </div>
                     
                     <div class="card">
                         <div class="card-icon orange">
-                            <i class="fas fa-user-clock"></i>
+                            <i class="fas fa-money-bill-wave"></i>
                         </div>
                         <div class="card-value" id="avgSalary">$0</div>
-                        <div class="card-label">Average Salary</div>
-                        <div class="card-trend positive">
-                            <i class="fas fa-arrow-up"></i>
-                            <span>5% from last month</span>
-                        </div>
+                        <div class="card-label">Avg. Salary</div>
                     </div>
                     
                     <div class="card">
@@ -958,57 +610,24 @@
                         </div>
                         <div class="card-value" id="totalDepartments">0</div>
                         <div class="card-label">Departments</div>
-                        <div class="card-trend positive">
-                            <i class="fas fa-arrow-up"></i>
-                            <span>2 new this quarter</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Charts -->
-                <div class="chart-container">
-                    <div class="chart-card">
-                        <div class="chart-header">
-                            <h3 class="chart-title">Employee Distribution by Department</h3>
-                            <select class="form-control" id="chartFilter" style="width: 150px;">
-                                <option>Last 30 days</option>
-                                <option>Last 90 days</option>
-                                <option>This Year</option>
-                            </select>
-                        </div>
-                        <div style="height: 300px;">
-                            <canvas id="departmentChart"></canvas>
-                        </div>
-                    </div>
-                    
-                    <div class="chart-card">
-                        <div class="chart-header">
-                            <h3 class="chart-title">Employee Status</h3>
-                        </div>
-                        <div style="height: 300px;">
-                            <canvas id="statusChart"></canvas>
-                        </div>
                     </div>
                 </div>
 
                 <!-- Employee Table -->
                 <div class="table-container">
                     <div class="table-header">
-                        <h3 class="table-title">All Employees</h3>
+                        <h3 class="table-title">Employee List</h3>
                         <div class="table-actions">
-                            <button class="btn btn-secondary" id="exportBtn">
-                                <i class="fas fa-file-export"></i> Export CSV
-                            </button>
-                            <button class="btn btn-primary" id="filterBtn">
-                                <i class="fas fa-filter"></i> Filter
-                            </button>
-                            <button class="btn btn-success" id="refreshBtn">
+                            <button class="btn btn-secondary" id="refreshBtn">
                                 <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                            <button class="btn btn-success" id="exportBtn">
+                                <i class="fas fa-download"></i> Export
                             </button>
                         </div>
                     </div>
                     
-                    <table id="employeeTable">
+                    <table>
                         <thead>
                             <tr>
                                 <th>Employee</th>
@@ -1016,7 +635,6 @@
                                 <th>Position</th>
                                 <th>Status</th>
                                 <th>Salary</th>
-                                <th>Join Date</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -1024,24 +642,7 @@
                             <!-- Employee rows will be inserted here -->
                         </tbody>
                     </table>
-                    
-                    <div id="emptyState" class="empty-state" style="display: none;">
-                        <div class="empty-state-icon">
-                            <i class="fas fa-user-slash"></i>
-                        </div>
-                        <h3 class="empty-state-title">No employees found</h3>
-                        <p class="empty-state-text">Add your first employee to get started with managing your workforce.</p>
-                        <button class="btn btn-primary" id="addFirstEmployeeBtn">
-                            <i class="fas fa-user-plus"></i> Add First Employee
-                        </button>
-                    </div>
                 </div>
-            </div>
-
-            <!-- Footer -->
-            <div class="footer">
-                <p>© 2023 Macha Employee Management System. All rights reserved.</p>
-                <p>v2.1.0 | Last updated: Today</p>
             </div>
         </div>
     </div>
@@ -1051,9 +652,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="modalTitle">Add New Employee</h2>
-                <button class="modal-close" id="modalClose">
-                    <i class="fas fa-times"></i>
-                </button>
+                <button class="btn btn-secondary btn-sm" id="closeModalBtn">✕</button>
             </div>
             
             <div class="modal-body">
@@ -1072,16 +671,9 @@
                         </div>
                     </div>
                     
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label" for="email">Email Address *</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" class="form-control" required>
-                        </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address *</label>
+                        <input type="email" id="email" class="form-control" required>
                     </div>
                     
                     <div class="form-row">
@@ -1092,10 +684,8 @@
                                 <option value="Engineering">Engineering</option>
                                 <option value="Marketing">Marketing</option>
                                 <option value="Sales">Sales</option>
-                                <option value="Human Resources">Human Resources</option>
+                                <option value="HR">Human Resources</option>
                                 <option value="Finance">Finance</option>
-                                <option value="Operations">Operations</option>
-                                <option value="IT Support">IT Support</option>
                             </select>
                         </div>
                         
@@ -1108,34 +698,15 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="salary">Salary ($) *</label>
-                            <input type="number" id="salary" class="form-control" min="0" step="100" required>
+                            <input type="number" id="salary" class="form-control" required min="0">
                         </div>
                         
                         <div class="form-group">
-                            <label class="form-label" for="status">Employment Status *</label>
+                            <label class="form-label" for="status">Status *</label>
                             <select id="status" class="form-control" required>
                                 <option value="Active">Active</option>
                                 <option value="Inactive">Inactive</option>
                                 <option value="On Leave">On Leave</option>
-                                <option value="Probation">Probation</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label" for="hireDate">Hire Date *</label>
-                            <input type="date" id="hireDate" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="location">Location</label>
-                            <select id="location" class="form-control">
-                                <option value="New York">New York</option>
-                                <option value="San Francisco">San Francisco</option>
-                                <option value="London">London</option>
-                                <option value="Singapore">Singapore</option>
-                                <option value="Remote">Remote</option>
                             </select>
                         </div>
                     </div>
@@ -1149,96 +720,468 @@
         </div>
     </div>
 
-    <!-- Toast Container -->
-    <div class="toast-container" id="toastContainer"></div>
-
     <script>
         // Initialize the application
         document.addEventListener('DOMContentLoaded', function() {
-            console.log("Macha EMS - Application Loading...");
+            console.log("Macha EMS - Application Starting...");
             
-            // Initialize sample data if not exists
+            // Initialize data
+            initData();
+            
+            // Load employees
+            loadEmployees();
+            
+            // Update stats
+            updateStats();
+            
+            // Setup event listeners
+            setupEventListeners();
+            
+            console.log("Macha EMS - Application Started Successfully!");
+        });
+
+        // Data Management Functions
+        function initData() {
             if (!localStorage.getItem('employees')) {
-                console.log("Creating sample data...");
                 const sampleEmployees = [
                     {
                         id: 1,
-                        firstName: "John",
-                        lastName: "Doe",
-                        email: "john.doe@company.com",
-                        phone: "+1 (555) 123-4567",
+                        firstName: "Rajesh",
+                        lastName: "Kumar",
+                        email: "rajesh@company.com",
                         department: "Engineering",
-                        position: "Senior Software Engineer",
-                        salary: 125000,
-                        status: "Active",
-                        hireDate: "2022-03-15",
-                        location: "New York"
+                        position: "Senior Developer",
+                        salary: 85000,
+                        status: "Active"
                     },
                     {
                         id: 2,
-                        firstName: "Jane",
-                        lastName: "Smith",
-                        email: "jane.smith@company.com",
-                        phone: "+1 (555) 987-6543",
+                        firstName: "Priya",
+                        lastName: "Sharma",
+                        email: "priya@company.com",
                         department: "Marketing",
-                        position: "Marketing Director",
-                        salary: 110000,
-                        status: "Active",
-                        hireDate: "2021-07-22",
-                        location: "San Francisco"
+                        position: "Marketing Manager",
+                        salary: 75000,
+                        status: "Active"
                     },
                     {
                         id: 3,
-                        firstName: "Robert",
-                        lastName: "Johnson",
-                        email: "robert.j@company.com",
-                        phone: "+1 (555) 456-7890",
+                        firstName: "Vikram",
+                        lastName: "Singh",
+                        email: "vikram@company.com",
                         department: "Sales",
-                        position: "Sales Manager",
-                        salary: 95000,
-                        status: "Active",
-                        hireDate: "2023-01-10",
-                        location: "New York"
-                    },
-                    {
-                        id: 4,
-                        firstName: "Emily",
-                        lastName: "Williams",
-                        email: "emily.w@company.com",
-                        phone: "+1 (555) 234-5678",
-                        department: "Human Resources",
-                        position: "HR Manager",
-                        salary: 85000,
-                        status: "Active",
-                        hireDate: "2020-11-05",
-                        location: "London"
-                    },
-                    {
-                        id: 5,
-                        firstName: "Michael",
-                        lastName: "Brown",
-                        email: "michael.b@company.com",
-                        phone: "+1 (555) 876-5432",
-                        department: "Finance",
-                        position: "Financial Analyst",
-                        salary: 90000,
-                        status: "Active",
-                        hireDate: "2019-09-18",
-                        location: "Singapore"
-                    },
-                    {
-                        id: 6,
-                        firstName: "Sarah",
-                        lastName: "Davis",
-                        email: "sarah.d@company.com",
-                        phone: "+1 (555) 345-6789",
-                        department: "Engineering",
-                        position: "Frontend Developer",
-                        salary: 105000,
-                        status: "Active",
-                        hireDate: "2022-08-30",
-                        location: "Remote"
-                    },
-                    {
-                        id: 7,
-                       
+                        position: "Sales Executive",
+                        salary: 65000,
+                        status: "Active"
+                    }
+                ];
+                
+                localStorage.setItem('employees', JSON.stringify(sampleEmployees));
+                localStorage.setItem('nextId', '4');
+                
+                console.log("Sample data created successfully!");
+            }
+        }
+
+        function getEmployees() {
+            const employees = localStorage.getItem('employees');
+            return employees ? JSON.parse(employees) : [];
+        }
+
+        function saveEmployees(employees) {
+            localStorage.setItem('employees', JSON.stringify(employees));
+        }
+
+        function getNextId() {
+            let nextId = localStorage.getItem('nextId');
+            if (!nextId) {
+                nextId = 1;
+                localStorage.setItem('nextId', nextId);
+            }
+            return parseInt(nextId);
+        }
+
+        function incrementNextId() {
+            let nextId = getNextId();
+            nextId++;
+            localStorage.setItem('nextId', nextId.toString());
+            return nextId;
+        }
+
+        // Employee Functions
+        function loadEmployees() {
+            console.log("Loading employees...");
+            const employees = getEmployees();
+            const tableBody = document.getElementById('employeeTableBody');
+            
+            tableBody.innerHTML = '';
+            
+            employees.forEach(employee => {
+                const row = document.createElement('tr');
+                
+                // Status badge
+                let statusClass = employee.status === 'Active' ? 'status-active' : 
+                                 employee.status === 'Inactive' ? 'status-inactive' : 'status-pending';
+                
+                // Avatar initials
+                const initials = `${employee.firstName.charAt(0)}${employee.lastName.charAt(0)}`;
+                
+                row.innerHTML = `
+                    <td>
+                        <div class="employee-info">
+                            <div class="employee-avatar">${initials}</div>
+                            <div>
+                                <div class="employee-name">${employee.firstName} ${employee.lastName}</div>
+                                <div class="employee-email">${employee.email}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>${employee.department}</td>
+                    <td>${employee.position}</td>
+                    <td><span class="status-badge ${statusClass}">${employee.status}</span></td>
+                    <td>$${employee.salary.toLocaleString()}</td>
+                    <td>
+                        <button class="btn btn-sm btn-secondary" onclick="editEmployee(${employee.id})">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteEmployee(${employee.id})">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+            
+            // Update employee count
+            document.getElementById('employeeCount').textContent = employees.length;
+            
+            console.log(`Loaded ${employees.length} employees`);
+        }
+
+        function addEmployee(employeeData) {
+            console.log("Adding new employee:", employeeData);
+            
+            const employees = getEmployees();
+            const newId = incrementNextId();
+            
+            const newEmployee = {
+                id: newId,
+                ...employeeData
+            };
+            
+            employees.push(newEmployee);
+            saveEmployees(employees);
+            
+            // Reload and update
+            loadEmployees();
+            updateStats();
+            
+            showToast('Employee added successfully!', 'success');
+            console.log("Employee added successfully!");
+        }
+
+        function editEmployee(id) {
+            console.log(`Editing employee with ID: ${id}`);
+            
+            const employees = getEmployees();
+            const employee = employees.find(emp => emp.id === id);
+            
+            if (employee) {
+                // Fill form
+                document.getElementById('employeeId').value = employee.id;
+                document.getElementById('firstName').value = employee.firstName;
+                document.getElementById('lastName').value = employee.lastName;
+                document.getElementById('email').value = employee.email;
+                document.getElementById('department').value = employee.department;
+                document.getElementById('position').value = employee.position;
+                document.getElementById('salary').value = employee.salary;
+                document.getElementById('status').value = employee.status;
+                
+                // Update modal title
+                document.getElementById('modalTitle').textContent = 'Edit Employee';
+                
+                // Open modal
+                openModal();
+                
+                console.log(`Editing employee: ${employee.firstName} ${employee.lastName}`);
+            }
+        }
+
+        function updateEmployee(id, employeeData) {
+            console.log(`Updating employee ID: ${id}`);
+            
+            const employees = getEmployees();
+            const index = employees.findIndex(emp => emp.id === id);
+            
+            if (index !== -1) {
+                employees[index] = {
+                    id: id,
+                    ...employeeData
+                };
+                
+                saveEmployees(employees);
+                
+                // Reload and update
+                loadEmployees();
+                updateStats();
+                
+                showToast('Employee updated successfully!', 'success');
+                console.log("Employee updated successfully!");
+            }
+        }
+
+        function deleteEmployee(id) {
+            console.log(`Deleting employee ID: ${id}`);
+            
+            if (confirm('Are you sure you want to delete this employee?')) {
+                let employees = getEmployees();
+                employees = employees.filter(emp => emp.id !== id);
+                
+                saveEmployees(employees);
+                
+                // Reload and update
+                loadEmployees();
+                updateStats();
+                
+                showToast('Employee deleted successfully!', 'danger');
+                console.log("Employee deleted successfully!");
+            }
+        }
+
+        // Stats Functions
+        function updateStats() {
+            console.log("Updating statistics...");
+            
+            const employees = getEmployees();
+            
+            // Calculate stats
+            const total = employees.length;
+            const active = employees.filter(emp => emp.status === 'Active').length;
+            const avgSalary = employees.length > 0 ? 
+                Math.round(employees.reduce((sum, emp) => sum + emp.salary, 0) / employees.length) : 0;
+            
+            // Get unique departments
+            const departments = [...new Set(employees.map(emp => emp.department))];
+            
+            // Update UI
+            document.getElementById('totalEmployees').textContent = total;
+            document.getElementById('activeEmployees').textContent = active;
+            document.getElementById('avgSalary').textContent = `$${avgSalary.toLocaleString()}`;
+            document.getElementById('totalDepartments').textContent = departments.length;
+            
+            console.log("Statistics updated!");
+        }
+
+        // Modal Functions
+        function openModal() {
+            console.log("Opening modal...");
+            document.getElementById('employeeModal').classList.add('active');
+        }
+
+        function closeModal() {
+            console.log("Closing modal...");
+            document.getElementById('employeeModal').classList.remove('active');
+            clearForm();
+        }
+
+        function clearForm() {
+            document.getElementById('employeeForm').reset();
+            document.getElementById('employeeId').value = '';
+            document.getElementById('modalTitle').textContent = 'Add New Employee';
+        }
+
+        // Toast Notification
+        function showToast(message, type = 'default') {
+            console.log(`Showing toast: ${message} (${type})`);
+            
+            // Create toast
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 
+                                  type === 'warning' ? 'exclamation-triangle' : 
+                                  type === 'danger' ? 'times-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+            `;
+            
+            // Add to body
+            document.body.appendChild(toast);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        // Event Listeners Setup
+        function setupEventListeners() {
+            console.log("Setting up event listeners...");
+            
+            // Add Employee Button
+            const addEmployeeBtn = document.getElementById('addEmployeeBtn');
+            if (addEmployeeBtn) {
+                addEmployeeBtn.addEventListener('click', function() {
+                    console.log("Add Employee button clicked!");
+                    openModal();
+                });
+                console.log("Add Employee button listener added");
+            } else {
+                console.error("Add Employee button not found!");
+            }
+            
+            // Add First Employee Button
+            const addFirstEmployeeBtn = document.getElementById('addFirstEmployeeBtn');
+            if (addFirstEmployeeBtn) {
+                addFirstEmployeeBtn.addEventListener('click', openModal);
+            }
+            
+            // Save Employee Button
+            const saveEmployeeBtn = document.getElementById('saveEmployeeBtn');
+            if (saveEmployeeBtn) {
+                saveEmployeeBtn.addEventListener('click', function() {
+                    console.log("Save Employee button clicked!");
+                    
+                    // Get form data
+                    const employeeId = document.getElementById('employeeId').value;
+                    const employeeData = {
+                        firstName: document.getElementById('firstName').value,
+                        lastName: document.getElementById('lastName').value,
+                        email: document.getElementById('email').value,
+                        department: document.getElementById('department').value,
+                        position: document.getElementById('position').value,
+                        salary: parseFloat(document.getElementById('salary').value),
+                        status: document.getElementById('status').value
+                    };
+                    
+                    // Validate
+                    if (!employeeData.firstName || !employeeData.lastName || !employeeData.email) {
+                        showToast('Please fill in all required fields!', 'warning');
+                        return;
+                    }
+                    
+                    if (employeeId) {
+                        // Update existing employee
+                        updateEmployee(parseInt(employeeId), employeeData);
+                    } else {
+                        // Add new employee
+                        addEmployee(employeeData);
+                    }
+                    
+                    closeModal();
+                });
+                console.log("Save Employee button listener added");
+            }
+            
+            // Close Modal Buttons
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', closeModal);
+            }
+            
+            const cancelBtn = document.getElementById('cancelBtn');
+            if (cancelBtn) {
+                cancelBtn.addEventListener('click', closeModal);
+            }
+            
+            // Refresh Button
+            const refreshBtn = document.getElementById('refreshBtn');
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', function() {
+                    console.log("Refresh button clicked!");
+                    loadEmployees();
+                    updateStats();
+                    showToast('Data refreshed successfully!', 'success');
+                });
+            }
+            
+            // Export Button
+            const exportBtn = document.getElementById('exportBtn');
+            if (exportBtn) {
+                exportBtn.addEventListener('click', function() {
+                    console.log("Export button clicked!");
+                    const employees = getEmployees();
+                    
+                    // Create CSV content
+                    let csv = 'First Name,Last Name,Email,Department,Position,Salary,Status\n';
+                    employees.forEach(emp => {
+                        csv += `${emp.firstName},${emp.lastName},${emp.email},${emp.department},${emp.position},${emp.salary},${emp.status}\n`;
+                    });
+                    
+                    // Create download link
+                    const blob = new Blob([csv], { type: 'text/csv' });
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'employees.csv';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    
+                    showToast('Data exported successfully!', 'success');
+                });
+            }
+            
+            // Search Input
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const employees = getEmployees();
+                    const tableBody = document.getElementById('employeeTableBody');
+                    
+                    tableBody.innerHTML = '';
+                    
+                    const filteredEmployees = employees.filter(emp => {
+                        const fullName = `${emp.firstName} ${emp.lastName}`.toLowerCase();
+                        return fullName.includes(searchTerm) ||
+                               emp.email.toLowerCase().includes(searchTerm) ||
+                               emp.department.toLowerCase().includes(searchTerm) ||
+                               emp.position.toLowerCase().includes(searchTerm);
+                    });
+                    
+                    filteredEmployees.forEach(employee => {
+                        const row = document.createElement('tr');
+                        let statusClass = employee.status === 'Active' ? 'status-active' : 
+                                         employee.status === 'Inactive' ? 'status-inactive' : 'status-pending';
+                        const initials = `${employee.firstName.charAt(0)}${employee.lastName.charAt(0)}`;
+                        
+                        row.innerHTML = `
+                            <td>
+                                <div class="employee-info">
+                                    <div class="employee-avatar">${initials}</div>
+                                    <div>
+                                        <div class="employee-name">${employee.firstName} ${employee.lastName}</div>
+                                        <div class="employee-email">${employee.email}</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>${employee.department}</td>
+                            <td>${employee.position}</td>
+                            <td><span class="status-badge ${statusClass}">${employee.status}</span></td>
+                            <td>$${employee.salary.toLocaleString()}</td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary" onclick="editEmployee(${employee.id})">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteEmployee(${employee.id})">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </td>
+                        `;
+                        
+                        tableBody.appendChild(row);
+                    });
+                });
+            }
+            
+            // Show welcome message
+            setTimeout(() => {
+                showToast('Welcome to Macha EMS! All buttons are working.', 'success');
+            }, 1000);
+            
+            console.log("All event listeners setup complete!");
+        }
+    </script>
+</body>
+</html>
